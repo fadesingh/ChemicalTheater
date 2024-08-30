@@ -6,13 +6,55 @@
     <title>Chemical Theatre</title>
     <style>
         body {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: Garamond, serif;
             line-height: 1.6;
             color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            position: fixed;
+            height: 100vh;
+            left: -250px;
+            transition: left 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .sidebar-content {
+            padding: 20px;
+        }
+        .sidebar a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .sidebar a:hover {
+            color: #3498db;
+        }
+        .main-content {
+            transition: margin-left 0.3s ease;
+            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f4f4f4;
+        }
+        .toggle-btn {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 1001;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
         }
         h1, h2 {
             color: #2c3e50;
@@ -26,12 +68,6 @@
             font-size: 1.8em;
             margin-top: 30px;
         }
-        .blink {
-            animation: blinker 1s linear infinite;
-        }
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
         .gif-container {
             max-width: 100%;
             height: auto;
@@ -44,67 +80,106 @@
         ul {
             padding-left: 20px;
         }
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                left: -100%;
             }
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
+            .main-content {
+                margin-left: 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Chemical Theatre</h1>
-        <p>A mathematical journey with @fadesingh</p>
-    </header>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 
-    <main>
-        <section>
-            <h2 class="blink">Act One - Atomic Drift</h2>
-            <div class="gif-container">
-                <img src="atomic_drift.gif?v=1" alt="Atomic Drift Animation">
-            </div>
-            <p>This workshop aims to simulate chemical reactions inside a computer and render them as animated videos.</p>
-            <p>However, we are not concerned here with normal chemistry, but with artificial or fictional chemistries. We will simulate a particle which does not exist in any known periodic table, and then we will define how these particles interact. Through this interaction we hope that strange, alien worlds will emerge.</p>
-            <p>In effect, you'd be playing a video game like a God trying to bring a tiny universe to life. More than that, you'll have the source code so you can modify the rules and behaviour as we go. We may think of atoms as actors on a cosmic stage - colliding, colluding and drifting into the unknown. And you are the omnipotent director.</p>
-            <p>Through this process, I hope to acquaint you with many pivotal ideas in the history of science and mathematics. Some of these ideas drive tectonic shifts in technology, and others are at the cutting edge of cosmology itself.</p>
-        </section>
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <h2>Sections</h2>
+            <a href="#introduction">Introduction</a>
+            <a href="#themes">Themes Covered</a>
+            <a href="#who-should-participate">Who should participate?</a>
+            <a href="#method">Method</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#fees">Fees</a>
+            <a href="#reading-list">Reading List</a>
+            <a href="#links">Links</a>
+        </div>
+    </nav>
 
-        <section>
-            <h2>Themes Covered</h2>
-            <p>(but not limited to) linear algebra, quantum mechanics, random or stochastic processes, time series analysis, probability, group theory, entropy, thermodynamics and more.</p>
-        </section>
+    <div class="main-content">
+        <header>
+            <h1>Chemical Theatre</h1>
+            <p>A mathematical journey with @fadesingh</p>
+        </header>
 
-        <section>
-            <h2>Who should participate?</h2>
-            <p>If science and mathematics doesn't attract you on a deeply intellectual and emotional level, my course is not for you.</p>
-            <p>If you are above the age of 20, curious about scientific and mathematical ideas and their history beyond the level of a mere dilettante & not satisfied with the superficial treatment of pop-science books this might be exactly what you need. I am the bridge for that person, I am opening the door, but it's up to them if they want to walk in.</p>
-            <p>Some background in science or programming is preferred.</p>
-        </section>
+        <main>
+            <section id="introduction">
+                <h2>Act One - Atomic Drift</h2>
+                <div class="gif-container">
+                    <img src="atomic_drift.gif?v=1" alt="Atomic Drift Animation">
+                </div>
+                <p>This workshop aims to simulate chemical reactions inside a computer and render them as animated videos.</p>
+                <p>However, we are not concerned here with normal chemistry, but with artificial or fictional chemistries. We will simulate a particle which does not exist in any known periodic table, and then we will define how these particles interact. Through this interaction we hope that strange, alien worlds will emerge.</p>
+                <p>In effect, you'd be playing a video game like a God trying to bring a tiny universe to life. More than that, you'll have the source code so you can modify the rules and behaviour as we go. We may think of atoms as actors on a cosmic stage - colliding, colluding and drifting into the unknown. And you are the omnipotent director.</p>
+                <p>Through this process, I hope to acquaint you with many pivotal ideas in the history of science and mathematics. Some of these ideas drive tectonic shifts in technology, and others are at the cutting edge of cosmology itself.</p>
+            </section>
 
-        <section>
-            <h2>Method</h2>
-            <p>Google Group (mailing list), animated gifs & video, python codes, modules every 15 days, printed course material (at the end of the course).</p>
-        </section>
+            <section id="themes">
+                <h2>Themes Covered</h2>
+                <p>(but not limited to) linear algebra, quantum mechanics, random or stochastic processes, time series analysis, probability, group theory, entropy, thermodynamics and more.</p>
+            </section>
 
-        <section>
-            <h2>Schedule</h2>
-            <p>3 months starting from September 10, 2024.</p>
-        </section>
+            <section id="who-should-participate">
+                <h2>Who should participate?</h2>
+                <p>If science and mathematics doesn't attract you on a deeply intellectual and emotional level, my course is not for you.</p>
+                <p>If you are above the age of 20, curious about scientific and mathematical ideas and their history beyond the level of a mere dilettante & not satisfied with the superficial treatment of pop-science books this might be exactly what you need. I am the bridge for that person, I am opening the door, but it's up to them if they want to walk in.</p>
+                <p>Some background in science or programming is preferred.</p>
+            </section>
 
-        <section>
-            <h2>Fees</h2>
-            <p>499 USD or Rs. 42,000 (depending on the conversion rate at the time of payment). All fees to be made in advance and are non-refundable. I reserve the right to admission.</p>
-        </section>
-    </main>
+            <section id="method">
+                <h2>Method</h2>
+                <p>Google Group (mailing list), animated gifs & video, python codes, modules every 15 days, printed course material (at the end of the course).</p>
+            </section>
 
-    <footer>
-        <p>&copy; 2024 Chemical Theatre by @fadesingh</p>
-    </footer>
+            <section id="schedule">
+                <h2>Schedule</h2>
+                <p>3 months starting from September 10, 2024.</p>
+            </section>
+
+            <section id="fees">
+                <h2>Fees</h2>
+                <p>499 USD or Rs. 42,000 (depending on the conversion rate at the time of payment). All fees to be made in advance and are non-refundable. I reserve the right to admission.</p>
+            </section>
+
+            <section id="reading-list">
+                <h2>Reading List</h2>
+                <p>To be updated with recommended books and resources.</p>
+            </section>
+
+            <section id="links">
+                <h2>Links</h2>
+                <p>Placeholder for important links and resources.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Chemical Theatre by @fadesingh</p>
+        </footer>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var mainContent = document.querySelector(".main-content");
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                mainContent.style.marginLeft = "250px";
+            } else {
+                mainContent.style.marginLeft = "0";
+            }
+        }
+    </script>
 </body>
 </html>
