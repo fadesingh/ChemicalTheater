@@ -3,32 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Theatrum Chemicum: A Grand Alchemical Stage</title>
+    <title>Chemical Theatre</title>
     <style>
         body {
-            font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+            font-family: Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
+            color: #333;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f9f3e6;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
         }
         h1 {
-            color: #8b4513;
-            text-align: center;
-            border-bottom: 2px solid #8b4513;
+            font-size: 2.5em;
+            border-bottom: 2px solid #3498db;
             padding-bottom: 10px;
         }
-        p {
-            text-indent: 30px;
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+        .gif-container {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Theatrum Chemicum: A Grand Alchemical Stage</h1>
-    <p>In the twilight of the 16th century, as the Renaissance sun cast long shadows over Europe, Lazarus Zetzner unfurled a tapestry of arcane knowledge. His "Theatrum Chemicum," a six-volume opus published from 1602 to 1661, became a vast stage where alchemical wisdom danced.</p>
-    <p>Within its pages, over 200 treatises from sages both ancient and contemporary wove a rich tapestry of chemical lore. From Roger Bacon's whispers to Raymond Lully's dreams, this grand theater of nature's transmutations captivated scholars for generations.</p>
-    <p>Zetzner's compilation, a cornerstone of alchemical learning, stood as a bridge between mystical philosophy and the dawning age of scientific inquiry, its influence echoing through the corridors of time.</p>
+    <header>
+        <h1>Chemical Theatre</h1>
+        <p>A mathematical journey with @fadesingh</p>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="blink">Act One - Atomic Drift</h2>
+            <div class="gif-container">
+                <img src="atomic_drift.gif?v=1" alt="Atomic Drift Animation">
+            </div>
+            <p>This workshop aims to simulate chemical reactions inside a computer and render them as animated videos.</p>
+            <p>However, we are not concerned here with normal chemistry, but with artificial or fictional chemistries. We will simulate a particle which does not exist in any known periodic table, and then we will define how these particles interact. Through this interaction we hope that strange, alien worlds will emerge.</p>
+            <p>In effect, you'd be playing a video game like a God trying to bring a tiny universe to life. More than that, you'll have the source code so you can modify the rules and behaviour as we go. We may think of atoms as actors on a cosmic stage - colliding, colluding and drifting into the unknown. And you are the omnipotent director.</p>
+            <p>Through this process, I hope to acquaint you with many pivotal ideas in the history of science and mathematics. Some of these ideas drive tectonic shifts in technology, and others are at the cutting edge of cosmology itself.</p>
+        </section>
+
+        <section>
+            <h2>Themes Covered</h2>
+            <p>(but not limited to) linear algebra, quantum mechanics, random or stochastic processes, time series analysis, probability, group theory, entropy, thermodynamics and more.</p>
+        </section>
+
+        <section>
+            <h2>Who should participate?</h2>
+            <p>If science and mathematics doesn't attract you on a deeply intellectual and emotional level, my course is not for you.</p>
+            <p>If you are above the age of 20, curious about scientific and mathematical ideas and their history beyond the level of a mere dilettante & not satisfied with the superficial treatment of pop-science books this might be exactly what you need. I am the bridge for that person, I am opening the door, but it's up to them if they want to walk in.</p>
+            <p>Some background in science or programming is preferred.</p>
+        </section>
+
+        <section>
+            <h2>Method</h2>
+            <p>Google Group (mailing list), animated gifs & video, python codes, modules every 15 days, printed course material (at the end of the course).</p>
+        </section>
+
+        <section>
+            <h2>Schedule</h2>
+            <p>3 months starting from September 10, 2024.</p>
+        </section>
+
+        <section>
+            <h2>Fees</h2>
+            <p>499 USD or Rs. 42,000 (depending on the conversion rate at the time of payment). All fees to be made in advance and are non-refundable. I reserve the right to admission.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Chemical Theatre by @fadesingh</p>
+    </footer>
 </body>
 </html>
