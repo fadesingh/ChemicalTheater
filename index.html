@@ -3,183 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemical Theatre</title>
+    <title>Chemical Theatre ASCII Animation</title>
     <style>
         body {
-            font-family: Garamond, serif;
-            line-height: 1.6;
+            background-color: white;
             color: #333;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .sidebar {
-            width: 250px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            position: fixed;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            left: -250px;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
+            margin: 0;
+            overflow: hidden;
         }
-        .sidebar.active {
-            left: 0;
-        }
-        .sidebar-content {
-            padding: 20px;
-        }
-        .sidebar a {
-            color: #ecf0f1;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-        .sidebar a:hover {
-            color: #3498db;
-        }
-        .main-content {
-            transition: margin-left 0.3s ease;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .toggle-btn {
-            position: fixed;
-            left: 10px;
-            top: 10px;
-            z-index: 1001;
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        h1 {
-            font-size: 2.5em;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-top: 30px;
-        }
-        .gif-container {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 100%;
-                left: -100%;
-            }
-            .main-content {
-                margin-left: 0;
-            }
+        #canvas {
+            font-size: 12px;
+            line-height: 1;
+            white-space: pre;
         }
     </style>
 </head>
 <body>
-    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-
-    <nav class="sidebar" id="sidebar">
-        <div class="sidebar-content">
-            <h2>Sections</h2>
-            <a href="#introduction">Introduction</a>
-            <a href="#themes">Themes Covered</a>
-            <a href="#who-should-participate">Who should participate?</a>
-            <a href="#method">Method</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#fees">Fees</a>
-            <a href="#reading-list">Reading List</a>
-            <a href="#links">Links</a>
-        </div>
-    </nav>
-
-    <div class="main-content">
-        <header>
-            <h1>Chemical Theatre</h1>
-            <p>A mathematical journey with @fadesingh</p>
-        </header>
-
-        <main>
-            <section id="introduction">
-                <h2>Act One - Atomic Drift</h2>
-                <div class="gif-container">
-                    <img src="atomic_drift.gif?v=1" alt="Atomic Drift Animation">
-                </div>
-                <p>This workshop aims to simulate chemical reactions inside a computer and render them as animated videos.</p>
-                <p>However, we are not concerned here with normal chemistry, but with artificial or fictional chemistries. We will simulate a particle which does not exist in any known periodic table, and then we will define how these particles interact. Through this interaction we hope that strange, alien worlds will emerge.</p>
-                <p>In effect, you'd be playing a video game like a God trying to bring a tiny universe to life. More than that, you'll have the source code so you can modify the rules and behaviour as we go. We may think of atoms as actors on a cosmic stage - colliding, colluding and drifting into the unknown. And you are the omnipotent director.</p>
-                <p>Through this process, I hope to acquaint you with many pivotal ideas in the history of science and mathematics. Some of these ideas drive tectonic shifts in technology, and others are at the cutting edge of cosmology itself.</p>
-            </section>
-
-            <section id="themes">
-                <h2>Themes Covered</h2>
-                <p>(but not limited to) linear algebra, quantum mechanics, random or stochastic processes, time series analysis, probability, group theory, entropy, thermodynamics and more.</p>
-            </section>
-
-            <section id="who-should-participate">
-                <h2>Who should participate?</h2>
-                <p>If science and mathematics doesn't attract you on a deeply intellectual and emotional level, my course is not for you.</p>
-                <p>If you are above the age of 20, curious about scientific and mathematical ideas and their history beyond the level of a mere dilettante & not satisfied with the superficial treatment of pop-science books this might be exactly what you need. I am the bridge for that person, I am opening the door, but it's up to them if they want to walk in.</p>
-                <p>Some background in science or programming is preferred.</p>
-            </section>
-
-            <section id="method">
-                <h2>Method</h2>
-                <p>Google Group (mailing list), animated gifs & video, python codes, modules every 15 days, printed course material (at the end of the course).</p>
-            </section>
-
-            <section id="schedule">
-                <h2>Schedule</h2>
-                <p>3 months starting from September 10, 2024.</p>
-            </section>
-
-            <section id="fees">
-                <h2>Fees</h2>
-                <p>499 USD or Rs. 42,000 (depending on the conversion rate at the time of payment). All fees to be made in advance and are non-refundable. I reserve the right to admission.</p>
-            </section>
-
-            <section id="reading-list">
-                <h2>Reading List</h2>
-                <p>To be updated with recommended books and resources.</p>
-            </section>
-
-            <section id="links">
-                <h2>Links</h2>
-                <p>Placeholder for important links and resources.</p>
-            </section>
-        </main>
-
-        <footer>
-            <p>&copy; 2024 Chemical Theatre by @fadesingh</p>
-        </footer>
-    </div>
+    <div id="canvas"></div>
 
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var mainContent = document.querySelector(".main-content");
-            sidebar.classList.toggle("active");
-            if (sidebar.classList.contains("active")) {
-                mainContent.style.marginLeft = "250px";
-            } else {
-                mainContent.style.marginLeft = "0";
-            }
+        const canvas = document.getElementById('canvas');
+        let frame = 0;
+
+        const baseStructure = `
+ ___________________________________________________________________________________________
+|                                                                                           |
+|    ☿   ~   ☽      ∞           ♄     ☉                                                     |
+|  ~ (∿∿∿) ~     ☼   ◊ ~  ⚶  /╲_☿_/╲                                                        |
+| ☽   ╭─────╮    ~   ⚛   ∇  □ ∫ ◯    ◊                                                     |
+|◊ ∞ ⚗│PRIMA│   ☼    ♁ ~ ◊    ∫   ⚛  ∞  ~   ╔══════════════════════════════════════════╗   |
+|⚛ ☾ ⚗│     │ ⚗ ╔═════╗  ⚶   /╲◯◊◯/╲       ║                                          ║   |
+|◊ ⚗ ⚗│MATER│⚗ ⚗║CHAOS║  □ ~  ∇ ∫  ∫ ☼     ║                                          ║   |
+|⚗ ⚗ ⚗│     │⚗ ⚗╚═╦═══╝ ◊      ♃  ⚶  ∫     ║                                          ║   |
+| ⚗ ⚗ ╰─────╯ ⚗   ║    ~  ◊  ☉    □        ║                                          ║   |
+|⚗ ⚗ ⚗  ◌  ⚗ ⚗ ⚗  ▼     ☼  □ ♀     ◊       ║                                          ║   |
+| ⚗ ⚗ ⚗   ⚗ ⚗ ⚗ /╲__/╲  ⚛   ∇  ⚶  ~        ║                                          ║   |
+|  ⚗ ⚗ ⚗ ⚗ ⚗ ⚗ ╲╱  ☉    ∞     □           ╚══════════════════════════════════════════╝   |
+|   ⚗ ⚗ ~ ⚗ ⚗  ◯    ◊ ~    ☽  ∇                                                           |
+|    ⚗  ⚛  ⚗ (∿∿∿) ~  ☼ ♂   ◊  ~                                                          |
+| □   ∇ ☽ ∞    ♄   ⚶  □  ∞  ⚛                                                             |
+|  ☉   ◊    ☼   □   ◊    ♃                                                                 |
+|___________________________________________________________________________________________|
+        `;
+
+        const textFragments = [
+            "Chemical Theatre: A mathematical journey with @fadesingh",
+            "Act One - Atomic Drift",
+            "This workshop aims to simulate chemical reactions inside a computer",
+            "and render them as animated videos.",
+            "We are not concerned here with normal chemistry,",
+            "but with artificial or fictional chemistries.",
+            "We will simulate a particle which does not exist in any known periodic table,",
+            "and then we will define how these particles interact.",
+            "Through this interaction we hope that strange, alien worlds will emerge.",
+            "You'd be playing a video game like a God trying to bring a tiny universe to life.",
+            "You'll have the source code so you can modify the rules and behaviour as we go.",
+            "We may think of atoms as actors on a cosmic stage -",
+            "colliding, colluding and drifting into the unknown.",
+            "And you are the omnipotent director.",
+            "Themes: linear algebra, quantum mechanics, random processes,",
+            "time series analysis, probability, group theory, entropy, thermodynamics and more.",
+            "If you are above 20, curious about scientific and mathematical ideas",
+            "beyond the level of a mere dilettante & not satisfied with pop-science books,",
+            "this might be exactly what you need.",
+            "Some background in science or programming is preferred.",
+            "3 months starting from September 10, 2024.",
+            "Fees: 499 USD or Rs. 42,000"
+        ];
+
+        const equations = [
+            "E = mc²",
+            "F = G(m₁m₂)/r²",
+            "∇ × B = μ₀J + μ₀ε₀∂E/∂t",
+            "iℏ∂ψ/∂t = Ĥψ",
+            "S = k ln W",
+            "PV = nRT",
+            "∫ e^x dx = e^x + C",
+            "∇ · E = ρ/ε₀",
+            "d/dx[f(x)g(x)] = f'(x)g(x) + f(x)g'(x)",
+            "∑(n=1 to ∞) 1/n² = π²/6",
+        ];
+
+        function getRandomPosition(width, height) {
+            return {
+                x: Math.floor(Math.random() * (width - 10)),
+                y: Math.floor(Math.random() * (height - 6))
+            };
         }
+
+        function replaceAt(str, row, col, replacement) {
+            const lines = str.split('\n');
+            for (let i = 0; i < replacement.length; i++) {
+                if (row + i < lines.length) {
+                    lines[row + i] = lines[row + i].substring(0, col) + 
+                                     replacement[i] + 
+                                     lines[row + i].substring(col + replacement[i].length);
+                }
+            }
+            return lines.join('\n');
+        }
+
+        function animate() {
+            let currentFrame = baseStructure;
+
+            // Add text fragments
+            const textPos = {x: 45, y: 7};
+            const text = textFragments[Math.floor(frame / 180) % textFragments.length];
+            const wrappedText = wrapText(text, 40);
+            currentFrame = replaceAt(currentFrame, textPos.y, textPos.x, wrappedText);
+
+            // Add equation
+            if (frame % 180 === 0) {
+                const equation = equations[Math.floor(Math.random() * equations.length)];
+                const eqPos = getRandomPosition(40, 15);
+                currentFrame = replaceAt(currentFrame, eqPos.y, eqPos.x, [equation]);
+            }
+
+            // Animate symbols (every 2 seconds)
+            if (frame % 60 === 0) {
+                const symbols = '☿☽☾☉♄♃♀♂⚛⚗◊□∇∞☼◯';
+                for (let i = 0; i < currentFrame.length; i++) {
+                    if (symbols.includes(currentFrame[i]) && Math.random() < 0.05) {
+                        const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                        currentFrame = currentFrame.substring(0, i) + randomSymbol + currentFrame.substring(i + 1);
+                    }
+                }
+            }
+
+            // Add some noise (every frame, but less of it)
+            for (let i = 0; i < 10; i++) {
+                const pos = getRandomPosition(80, 20);
+                const noise = Math.random() < 0.5 ? '.' : ' ';
+                currentFrame = replaceAt(currentFrame, pos.y, pos.x, [noise]);
+            }
+
+            canvas.textContent = currentFrame;
+            frame++;
+            setTimeout(() => requestAnimationFrame(animate), 33); // ~30 fps
+        }
+
+        function wrapText(text, maxLength) {
+            const words = text.split(' ');
+            let lines = [];
+            let currentLine = '';
+
+            words.forEach(word => {
+                if ((currentLine + word).length <= maxLength) {
+                    currentLine += (currentLine ? ' ' : '') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            });
+            lines.push(currentLine);
+
+            return lines;
+        }
+
+        animate();
     </script>
 </body>
 </html>
